@@ -1,14 +1,7 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "development",
-  devServer: {
-    static: {
-      directory: path.join(__dirname, "dist"),
-    },
-    compress: true,
-    port: 8080,
-  },
   module: {
     rules: [
       {
@@ -16,10 +9,23 @@ module.exports = {
         use: [{ loader: "babel-loader" }],
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src/index.html"),
+    }),
+  ],
   output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist/static"),
+    path: path.resolve(__dirname, "build"),
+    filename: "[name].[contenthash].js",
   },
 };

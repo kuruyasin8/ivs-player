@@ -17,6 +17,10 @@
  */
 
 // PlaybackURL
+
+import "./style.css";
+import placehodler from "./assets/placeholder.png";
+
 const stream1 =
   "https://fcc3ddae59ed.us-west-2.playback.live-video.net/api/video/v1/us-west-2.893648527354.channel.DmumNckWFTqz.m3u8";
 
@@ -212,3 +216,7 @@ function getBandwidthUsage() {
   const bitrate = player.getAverageBitrate();
   return (bitrate / (1024 * 1024)).toFixed(2) + " Mbps";
 }
+
+window.onload = function () {
+  videoPlayer.setAttribute("poster", placehodler);
+};
