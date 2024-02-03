@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -23,6 +24,10 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src/index.html"),
+    }),
+    new WorkboxWebpackPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
     }),
   ],
   output: {
