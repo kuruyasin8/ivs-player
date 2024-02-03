@@ -20,6 +20,7 @@
 
 import "./style.css";
 import placehodler from "./assets/placeholder.png";
+import { register } from "./serviceWorkerRegistration";
 
 window.counter = -1;
 
@@ -149,3 +150,5 @@ function stopStream() {
 window.onload = function () {
   videoPlayer.setAttribute("poster", placehodler);
 };
+
+register();
