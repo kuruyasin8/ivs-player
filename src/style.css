@@ -187,7 +187,7 @@ body {
   left: 15px;
 }
 
-#mute {
+#change {
   left: calc(25px + var(--btn-size));
 }
 
@@ -204,14 +204,6 @@ body {
 }
 
 .btn--play .icon--play {
-  display: none;
-}
-
-.btn--mute .icon--volume_off {
-  display: none;
-}
-
-.btn--unmute .icon--volume_up {
   display: none;
 }
 
@@ -279,3 +271,10 @@ body {
 .full-height {
   height: 100%;
 }
+
+video::-webkit-media-controls-play-button {display: none;}
+video::-webkit-media-controls-timeline {display: none;}
+video::-webkit-media-controls-current-time-display{display: none;}
+video::-webkit-media-controls-time-remaining-display {display: none;}
+video::-webkit-media-controls-mute-button {display: none;}
+video::-webkit-media-controls-volume-slider {display: none;}
