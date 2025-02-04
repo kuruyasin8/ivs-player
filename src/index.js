@@ -26,14 +26,7 @@ window.counter = -1;
 
 const streams = [];
 
-streams.push("https://cakal.click/yayin1.m3u8");
-streams.push("https://cakal.click/yayinzirve.m3u8");
-streams.push("https://cakal.click/yayinb2.m3u8");
-streams.push("https://cakal.click/yayinb3.m3u8");
-streams.push("https://cakal.click/yayinb4.m3u8");
-streams.push("https://cakal.click/yayinb5.m3u8");
-streams.push("https://cakal.click/yayinbm1.m3u8");
-streams.push("https://cakal.click/yayinbm2.m3u8");
+streams.push("https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8");
 
 // App
 const videoPlayer = document.getElementById("video-player");
